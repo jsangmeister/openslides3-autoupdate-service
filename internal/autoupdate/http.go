@@ -140,6 +140,7 @@ func (a *Autoupdate) HandleProjector(w http.ResponseWriter, r *http.Request) err
 			return noStatusCodeError{err}
 		}
 		w.(http.Flusher).Flush()
+        log.Printf("Flushed to client with change id %d\n", cid)
 		tid = ntid
 	}
 }
